@@ -1,8 +1,10 @@
 from copy import deepcopy
 
-try:
+from django import VERSION as django_version
+
+if django_version >= (3, 0):
     from django.utils.translation import gettext_lazy as _
-except ImportError:
+else:
     from django.utils.translation import ugettext_lazy as _
 
 
